@@ -18,7 +18,7 @@ export default {
   name: 'send-text',
   data () {
     return {
-      value: ''
+      value: '',
     }
   },
   computed: {
@@ -85,7 +85,6 @@ export default {
     bottom: 0;
     width: 100%;
     border-top: 1px solid rgb(239, 236, 236);
-    position: relative;
   }
   .send-text{
     height: 64px;

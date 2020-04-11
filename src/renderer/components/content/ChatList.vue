@@ -49,6 +49,9 @@
 
 <style scoped>
 .box{
+    position: absolute;
+    width: 100%;
+    top: 0;
     height: calc(100% - 130px);
 }
 .title{

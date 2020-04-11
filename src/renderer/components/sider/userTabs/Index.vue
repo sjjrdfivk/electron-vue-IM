@@ -30,6 +30,7 @@
       ]),
       quitLogin () {
         this.$socket.emit('logout', {userid: this.$store.state.user.userInfo.userid})
+        this.$socket.close()
         localStorage.setItem('login', false)
         this.deleteStateInfo()
         this.$router.push({path: '/login'})

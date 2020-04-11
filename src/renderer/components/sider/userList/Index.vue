@@ -53,6 +53,7 @@ export default {
           userid: this.userInfo.userid,
           username: this.userInfo.username
         })
+        this.getServerListData()
       })
       this.sockets.subscribe(`message-${this.userInfo.userid}`, (data) => {
         console.log('测试接收', data)
