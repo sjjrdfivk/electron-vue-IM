@@ -3,7 +3,7 @@ import Qs from 'qs'
 var instance = axios.create({
   url: '/',
 
-  baseURL: 'http://172.16.100.117:8087/',
+  baseURL: 'http://127.0.0.1:8087/',
 
   // transformRequest: [function (data) {
   //   return data

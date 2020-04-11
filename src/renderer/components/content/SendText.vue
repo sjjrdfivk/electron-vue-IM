@@ -1,5 +1,5 @@
 <template>
-  <div class="send-box">
+  <div class="send-box" id="send">
     <div class="send-icon">
       <mu-icon value="mood"></mu-icon>
       <mu-icon value="folder"></mu-icon>
@@ -27,6 +27,27 @@ export default {
     },
     userInfo () {
       return this.$store.state.user.userInfo
+    }
+  },
+  mounted () {
+    let resize = document.querySelector('#send')
+    let box = document.querySelector('.content')
+    resize.onmousedown = function (e) {
+      const startX = e.clientY
+      resize.top = resize.offsetTop
+      box.onmousemove = function (e) {
+        var endX = e.clientY
+        var moveLen = resize.top + (endX - startX)
+        // var maxT = box.clientHeight - resize.offsetHeight
+        resize.style.top = moveLen
+        // left.style.height = moveLen + "px"
+        resize.style.height = (box.clientHeight - moveLen - 5) + 'px'
+      }
+      box.onmouseup = function (evt) {
+        box.onmousemove = null
+        box.onmouseup = null
+        resize.releaseCapture && resize.releaseCapture()
+      }
     }
   },
   methods: {
@@ -85,6 +106,7 @@ export default {
     bottom: 0;
     width: 100%;
     border-top: 1px solid rgb(239, 236, 236);
+    /* position: relative; */
   }
   .send-text{
     height: 64px;

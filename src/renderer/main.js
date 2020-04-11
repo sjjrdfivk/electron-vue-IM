@@ -12,7 +12,7 @@ Vue.use(MuseUI)
 Vue.use(new VueSocketIO({
   debug: true,
   // 服务器端地址
-  connection: 'http://172.16.100.117:8087/'
+  connection: 'http://127.0.0.1:8087/'
 }))
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
