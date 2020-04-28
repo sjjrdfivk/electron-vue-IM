@@ -18,7 +18,7 @@ export default {
   name: 'send-text',
   data () {
     return {
-      value: '',
+      value: ''
     }
   },
   computed: {
@@ -36,6 +36,7 @@ export default {
       const startX = e.clientY
       resize.top = resize.offsetTop
       box.onmousemove = function (e) {
+        console.log(resize.top)
         var endX = e.clientY
         var moveLen = resize.top + (endX - startX)
         // var maxT = box.clientHeight - resize.offsetHeight
